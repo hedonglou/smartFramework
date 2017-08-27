@@ -1,7 +1,7 @@
 package org.smart4j.service;
 
+import org.smart4j.helper.DatabaseHelper;
 import org.smart4j.model.Customer;
-
 import java.util.List;
 import java.util.Map;
 
@@ -11,8 +11,8 @@ import java.util.Map;
 public class CustomerService {
 
     public List<Customer> getCustomerList(String keyword){
-
-        return null;
+        String sql = "select * from customer";
+        return DatabaseHelper.queryEntityList(Customer.class,sql);
     }
 
     public Customer getCustomerById(Long id){
